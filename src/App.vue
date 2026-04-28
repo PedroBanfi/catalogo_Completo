@@ -5,11 +5,12 @@
   import ButtonChild from './components/ButtonChild.vue';
   const produtos = ref(listaProdutos)
 
-  const alterando = ref(true)
+  const alterando = ref(false)
   const preco = ref(0)
   const posicaoProduto = ref(-1)
   function salvarPreco() {
-    alert('Teste')
+    produtos.value[posicaoProduto.value].preco = preco.value;
+    alterando.value = false;
   }
 
   function corrigirPreco(idProduto) {
